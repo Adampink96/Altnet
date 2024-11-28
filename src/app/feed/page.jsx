@@ -13,6 +13,7 @@ export default async function FeedPage() {
 content.id,
 content.post,
 profile.username,
+profile.bio,
 profile.id as profile_id,
 remark.comment 
 FROM content
@@ -36,13 +37,15 @@ LEFT JOIN remark ON content.clerk_id = remark.clerk_id`);
         return (
           <div key={content.id}>
             <h3>
-              <Link href={`/profile/${content.user_id}`}>
+              <Link href={`/profile/${content.profile_id}`}>
                 {content.username}
               </Link>
             </h3>
-            <p>{content.post}</p>
+            <p>
+              <Link href={`/feed/${content.id}`}> {content.post}</Link>
+            </p>
 
-            <CommentForm />
+            <CommentForm id={content.id} />
           </div>
         );
       })}
