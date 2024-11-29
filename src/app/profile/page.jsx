@@ -32,8 +32,8 @@ export default async function ProfilePage() {
           </div>
         </div>
       )}
-      <h2>{profile[0].username}</h2>
-      <p>{profile[0].bio}</p>
+      <h2>Username:{profile[0].username}</h2>
+      <p>Bio:{profile[0].bio}</p>
     </div>
   );
 }

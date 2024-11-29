@@ -12,8 +12,8 @@ export default async function SingleProfilePage({ params }) {
   console.log(profile);
   return (
     <div>
-      <h2>{profile[0].username}</h2>
-      <p>{profile[0].bio}</p>
+      <h2>username:{profile[0].username}</h2>
+      <p>Bio:{profile[0].bio}</p>
     </div>
   );
 }
