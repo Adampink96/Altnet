@@ -36,7 +36,7 @@ LEFT JOIN remark ON content.clerk_id = remark.clerk_id`);
       </SignedOut>
       {contents.map((content) => {
         return (
-          <div key={content.id}>
+          <div key={content.id + content.username}>
             <h3>
               <Link href={`/profile/${content.profile_id}`}>
                 {content.username}
