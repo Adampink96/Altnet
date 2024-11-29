@@ -1,5 +1,7 @@
 import { db } from "@/utils/db";
 // import { auth } from "@clerk/nextjs/server";
+import { notFound } from "next/navigation";
+import Break from "@/components/Break";
 
 export default async function SingleProfilePage({ params }) {
   //   const { userId } = await auth();
@@ -10,6 +12,10 @@ export default async function SingleProfilePage({ params }) {
   );
   const profile = profileresponse.rows;
   console.log(profile);
+
+  if (!profile.id) {
+    return <Break />;
+  }
   return (
     <div>
       <h2>username:{profile[0].username}</h2>

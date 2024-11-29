@@ -22,14 +22,14 @@ export default async function ProfilePage() {
           {currentUserObj.firstName
             ? `Welcome to Altnet ${currentUserObj.firstName}`
             : `welcome to Altnet`}
-          <div>
+          {/* <div>
             {" "}
             <SignedOut>
               <Link href="/sign-in">
                 Login to your account to make view profile
               </Link>
             </SignedOut>
-          </div>
+          </div> */}
         </div>
       )}
       <h2>Username:{profile[0].username}</h2>

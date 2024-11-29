@@ -40,7 +40,8 @@ LEFT JOIN remark ON content.clerk_id = remark.clerk_id`);
             <h3>
               <Link href={`/profile/${content.profile_id}`}>
                 {content.username}
-              </Link>
+              </Link>{" "}
+              &nbsp; Says
             </h3>
             <p>
               <Link href={`/feed/${content.id}`}> {content.post}</Link>
