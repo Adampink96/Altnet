@@ -7,9 +7,9 @@ export default function Home() {
         digital connection. Join a community that values authenticity,
         creativity, and meaningful interactions. Altnet brings together
         like-minded individuals to share ideas, explore new passions, and engage
-        in conversations that matter. Whether you're an artist, a creator, or
-        simply someone who values real connections, Altnet is the space to be.
-        Discover fresh content, build your network, and create the future of
+        in conversations that matter. Whether you&apos;re an artist, a creator,
+        or simply someone who values real connections, Altnet is the space to
+        be. Discover fresh content, build your network, and create the future of
         social media with us. Ready to be part of something different? Sign up
         today and start connecting on Altnet.
       </p>
