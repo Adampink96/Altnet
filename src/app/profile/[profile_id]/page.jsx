@@ -14,7 +14,7 @@ export default async function SingleProfilePage({ params }) {
   console.log(profile);
 
   if (!profile.id) {
-    return <Break />;
+    <Break />;
   }
   return (
     <div>
