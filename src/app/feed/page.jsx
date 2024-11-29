@@ -15,6 +15,7 @@ content.post,
 profile.username,
 profile.bio,
 profile.id as profile_id,
+remark.id as remark_id,
 remark.comment 
 FROM content
 LEFT JOIN profile ON content.clerk_id = profile.clerk_id

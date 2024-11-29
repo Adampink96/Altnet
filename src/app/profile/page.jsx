@@ -1,12 +1,17 @@
 import { db } from "@/utils/db";
 import { auth, currentUser } from "@clerk/nextjs/server";
-
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
 export default async function ProfilePage() {
-  const user = await auth();
+  const { user, userId } = await auth();
+
   const currentUserObj = await currentUser();
+  console.log(userId);
   console.log(user);
   console.log(currentUserObj);
-  const responseProfile = await db.query(`SELECT * FROM profile`);
+  const responseProfile = await db.query(
+    `SELECT * FROM profile WHERE clerk_id = '${userId}'`
+  );
   const profile = responseProfile.rows;
 
   return (
@@ -17,8 +22,18 @@ export default async function ProfilePage() {
           {currentUserObj.firstName
             ? `Welcome to Altnet ${currentUserObj.firstName}`
             : `welcome to Altnet`}
+          <div>
+            {" "}
+            <SignedOut>
+              <Link href="/sign-in">
+                Login to your account to make view profile
+              </Link>
+            </SignedOut>
+          </div>
         </div>
       )}
+      <h2>{profile[0].username}</h2>
+      <p>{profile[0].bio}</p>
     </div>
   );
 }

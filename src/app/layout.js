@@ -8,17 +8,35 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import Link from "next/link";
+import {
+  PersonIcon,
+  HomeIcon,
+  ReaderIcon,
+  RocketIcon,
+} from "@radix-ui/react-icons";
 
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
         <body>
-          <h1>Altnet</h1>
-          <nav>
-            <Link href="/">Home</Link>
-            <Link href="/feed">Feed</Link>
-            <Link href="/profile">Profile</Link>
+          <h1>
+            Altnet
+            <RocketIcon />
+          </h1>
+          <nav className="navbar">
+            <Link href="/">
+              Home
+              <HomeIcon />
+            </Link>
+            <Link href="/feed">
+              Feed
+              <ReaderIcon />
+            </Link>
+            <Link href="/profile">
+              Profile
+              <PersonIcon />
+            </Link>
           </nav>
           <SignedOut>
             <SignInButton />
